@@ -7,7 +7,7 @@ import './index.css'
 
 createRoot(document.getElementById('root')!).render(
 	<StrictMode>
-		<BrowserRouter basename={import.meta.env.DEV ? '/' : 'bk_react-stations-4'}>
+		<BrowserRouter basename={import.meta.env.DEV ? '/' : 'react-stations-4'}>
 			<App />
 		</BrowserRouter>
 	</StrictMode>,
