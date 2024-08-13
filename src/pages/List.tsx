@@ -1,4 +1,3 @@
-import React from 'react'
 import Code from '../json/20240813.json'
 
 export const List = () => {
