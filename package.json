@@ -8,9 +8,11 @@
 		"build": "tsc -b && vite build && cp -r dist docs",
 		"lint": "eslint .",
 		"preview": "vite preview",
-		"rebuild": "vite build && rm -R docs && cp -r dist docs"
+		"rebuild": "vite build && rm -R docs && cp -r dist docs",
+		"start": "node server/index.js"
 	},
 	"dependencies": {
+		"express": "^4.19.2",
 		"react": "^18.3.1",
 		"react-dom": "^18.3.1",
 		"react-router-dom": "^6.26.0",
