@@ -1,0 +1,40 @@
+@use '../variables' as var;
+@use '../mixins' as mx;
+
+body {
+	margin: 0;
+	display: flex;
+	place-items: center;
+	justify-content: center;
+	min-width: 320px;
+	min-height: 100vh;
+}
+#logo {
+	// width: 100px;
+	opacity: 0;
+	animation: logoAnimation 2.5s ease-in 0.5s forwards;
+	color: var.$theme;
+	font-weight: bold;
+	text-align: center;
+}
+#logo img {
+	display: inline-block;
+	max-width: 100px;
+}
+@keyframes logoAnimation {
+	0% {
+		opacity: 0;
+	}
+	15% {
+		opacity: 1;
+		transform: translate(0);
+	}
+	95% {
+		opacity: 1;
+		transform: translate(0);
+	}
+	100% {
+		opacity: 0;
+		transform: translate(0, -15px);
+	}
+}

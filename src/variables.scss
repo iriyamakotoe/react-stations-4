@@ -1,0 +1,20 @@
+$theme: #9b2f2f;
+$red: #f57d7e;
+$blue: #242f9b;
+$gray-dark: #273444;
+$gray: #8492a6;
+$gray-light: #d3dce6;
+
+//map型(key: value)でブレークポイントを定義する。
+$breakpoints: (
+	'pc': 'screen and (min-width: 796px)',
+	'tablet': 'screen and (max-width: 795px)',
+	'sp': 'screen and (max-width: 420px)',
+	'small-screen': 'screen and (max-width: 320px)',
+);
+
+@mixin breakPoint($key) {
+	@media #{map-get($breakpoints, $key)} {
+		@content;
+	}
+}
