@@ -1,11 +1,7 @@
 // Generated using webpack-cli https://github.com/webpack/webpack-cli
-import path from 'path'
-import {fileURLToPath} from 'url'
-import HtmlWebpackPlugin from 'html-webpack-plugin'
 
-const __filename = fileURLToPath(import.meta.url)
-
-const __dirname = path.dirname(__filename)
+const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const isProduction = process.env.NODE_ENV == 'production'
 
@@ -19,7 +15,7 @@ const config = {
 	devServer: {
 		open: true,
 		host: 'localhost',
-		port: 9000,
+		port: 8000,
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
@@ -65,7 +61,7 @@ const config = {
 	target: 'web',
 }
 
-export default () => {
+module.exports = () => {
 	if (isProduction) {
 		config.mode = 'production'
 	} else {
