@@ -2,6 +2,9 @@
 import path from 'path'
 import {fileURLToPath} from 'url'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
+import nodeExternals from 'webpack-node-externals'
+
+import process from 'process'
 
 const __filename = fileURLToPath(import.meta.url)
 
@@ -19,13 +22,11 @@ const config = {
 	devServer: {
 		open: true,
 		host: 'localhost',
-		port: 9000,
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
 			template: 'index.html',
 		}),
-
 		// Add your plugins here
 		// Learn more about plugins from https://webpack.js.org/configuration/plugins/
 	],
@@ -61,8 +62,25 @@ const config = {
 	},
 	resolve: {
 		extensions: ['.tsx', '.ts', '.jsx', '.js', '...'],
+		alias: {
+			zlib: 'browserify-zlib',
+			querystring: 'querystring-es3',
+			path: 'path-browserify',
+			crypto: 'crypto-browserify',
+			stream: 'stream-browserify',
+			http: 'stream-http',
+			url: 'url',
+			util: 'util',
+			assert: 'assert',
+			process: 'process/browser',
+			fs: false,
+			net: false,
+			async_hooks: false,
+			vm: false,
+		},
 	},
-	target: 'web',
+	target: 'node',
+	externals: [nodeExternals()],
 }
 
 export default () => {
