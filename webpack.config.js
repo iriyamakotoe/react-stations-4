@@ -14,14 +14,14 @@ const isProduction = process.env.NODE_ENV == 'production'
 const stylesHandler = 'style-loader'
 
 const config = {
-	entry: './server/index.js',
+	entry: './src/main.tsx',
 	output: {
 		path: path.resolve(__dirname, 'dist'),
 	},
 	devServer: {
 		open: true,
 		host: 'localhost',
-		port: 9000,
+		// port: 9000,
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
@@ -53,7 +53,7 @@ const config = {
 				use: [stylesHandler, 'css-loader', 'postcss-loader'],
 			},
 			{
-				test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
+				test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif|webp)$/i,
 				type: 'asset',
 			},
 
@@ -64,7 +64,7 @@ const config = {
 	resolve: {
 		extensions: ['.tsx', '.ts', '.jsx', '.js', '...'],
 	},
-	target: 'node',
+	target: ['web', 'es5'],
 	externals: [nodeExternals()],
 }
 

@@ -1,3 +1,4 @@
+import React from 'react'
 import {useNavigate} from 'react-router-dom'
 import './home.scss'
 import logo from '../assets/logo.webp'
