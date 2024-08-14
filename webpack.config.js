@@ -21,6 +21,7 @@ const config = {
 	devServer: {
 		open: true,
 		host: 'localhost',
+		port: 9000,
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
@@ -63,6 +64,7 @@ const config = {
 	resolve: {
 		extensions: ['.tsx', '.ts', '.jsx', '.js', '...'],
 	},
+	target: 'node',
 	externals: [nodeExternals()],
 }
 
