@@ -1,5 +1,5 @@
 // Generated using webpack-cli https://github.com/webpack/webpack-cli
-
+import process from 'process'
 import path from 'path'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import nodeExternals from 'webpack-node-externals'
@@ -19,15 +19,19 @@ const config = {
 		path: path.resolve(__dirname, 'dist'),
 	},
 	devServer: {
+		static: {
+			directory: path.resolve(__dirname, 'dist'),
+		},
+		// devMiddleware: {
+		// 	index: 'main.js',
+		// },
 		open: true,
 		host: 'localhost',
-		// port: 9000,
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
 			template: 'index.html',
 		}),
-
 		// Add your plugins here
 		// Learn more about plugins from https://webpack.js.org/configuration/plugins/
 	],
