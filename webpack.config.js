@@ -1,5 +1,5 @@
 // Generated using webpack-cli https://github.com/webpack/webpack-cli
-
+import process from 'process'
 import path from 'path'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import nodeExternals from 'webpack-node-externals'
@@ -27,7 +27,6 @@ const config = {
 		new HtmlWebpackPlugin({
 			template: 'index.html',
 		}),
-
 		// Add your plugins here
 		// Learn more about plugins from https://webpack.js.org/configuration/plugins/
 	],
@@ -63,6 +62,9 @@ const config = {
 	},
 	resolve: {
 		extensions: ['.tsx', '.ts', '.jsx', '.js', '...'],
+		alias: {
+			process: 'process/browser',
+		},
 	},
 	target: 'node',
 	externals: [nodeExternals()],
