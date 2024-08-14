@@ -19,9 +19,14 @@ const config = {
 		path: path.resolve(__dirname, 'dist'),
 	},
 	devServer: {
+		static: {
+			directory: path.resolve(__dirname, 'dist'),
+		},
+		// devMiddleware: {
+		// 	index: 'main.js',
+		// },
 		open: true,
 		host: 'localhost',
-		port: 9000,
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
