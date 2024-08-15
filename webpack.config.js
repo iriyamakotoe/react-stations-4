@@ -16,7 +16,6 @@ const stylesHandler = 'style-loader'
 const config = {
 	entry: './server/index.js',
 	output: {
-		filename: 'index.js',
 		path: path.resolve(__dirname, 'dist'),
 	},
 	devServer: {
@@ -27,9 +26,9 @@ const config = {
 		host: 'localhost',
 	},
 	plugins: [
-		// new HtmlWebpackPlugin({
-		// 	template: 'index.html',
-		// }),
+		new HtmlWebpackPlugin({
+			template: 'index.html',
+		}),
 		// Add your plugins here
 		// Learn more about plugins from https://webpack.js.org/configuration/plugins/
 	],
