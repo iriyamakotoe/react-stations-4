@@ -22,9 +22,6 @@ const config = {
 		static: {
 			directory: path.resolve(__dirname, 'dist'),
 		},
-		// devMiddleware: {
-		// 	index: 'main.js',
-		// },
 		open: true,
 		host: 'localhost',
 	},
