@@ -2,10 +2,9 @@
 	"name": "my-webpack-project",
 	"private": true,
 	"version": "1.0.0",
-	"type": "module",
 	"scripts": {
 		"dev": "vite",
-		"build": "webpack --config webpack.config.js --mode=development&&webpack --config webpack.client.config.js --mode=development",
+		"build": "webpack --config webpack.config.js&&webpack --config webpack.client.config.js",
 		"lint": "eslint .",
 		"preview": "vite preview",
 		"rebuild": "vite build && rm -R docs && cp -r dist docs",
