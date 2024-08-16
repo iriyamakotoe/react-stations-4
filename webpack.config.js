@@ -31,11 +31,19 @@ const config = {
 	],
 	module: {
 		rules: [
+			// {
+			// 	// 最初はbabelの配置になる。順番変更不可
+			// 	test: /\.(js|jsx)$/i,
+			// 	loader: 'babel-loader',
+			// 	options: {presets: ['@babel/preset-env', '@babel/preset-react', '@babel/preset-typescript']},
+			// },
 			{
-				// 最初はbabelの配置になる。順番変更不可
-				test: /\.(js|jsx)$/i,
-				loader: 'babel-loader',
-				options: {presets: ['@babel/preset-env', '@babel/preset-react', '@babel/preset-typescript']},
+				test: /\.jsx?$/, // 拡張子がjsxで
+				exclude: /node_modules/, // node_modulesフォルダ配下でなければ
+				loader: 'babel', // babel-loaderを使って変換する
+				query: {
+					plugins: ['transform-react-jsx'], // babelのtransform-react-jsxプラグインを使ってjsxを変換
+				},
 			},
 			{
 				test: /\.(ts|tsx)$/i,
@@ -62,7 +70,7 @@ const config = {
 	resolve: {
 		extensions: ['.tsx', '.ts', '.jsx', '.js', '...'],
 	},
-	target: ['node'],
+	target: ['node', 'es6'],
 	externals: [nodeExternals()],
 }
 

@@ -5,7 +5,7 @@
 	"type": "module",
 	"scripts": {
 		"dev": "vite",
-		"build": "webpack --config webpack.config.js&&webpack --config webpack.client.config.js",
+		"build": "webpack --config webpack.config.js --mode=development&&webpack --config webpack.client.config.js --mode=development",
 		"lint": "eslint .",
 		"preview": "vite preview",
 		"rebuild": "vite build && rm -R docs && cp -r dist docs",

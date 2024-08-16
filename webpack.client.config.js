@@ -31,12 +31,12 @@ const config = {
 	],
 	module: {
 		rules: [
-			{
-				// 最初はbabelの配置になる。順番変更不可
-				test: /\.(js|jsx)$/i,
-				loader: 'babel-loader',
-				options: {presets: ['@babel/preset-env', '@babel/preset-react', '@babel/preset-typescript']},
-			},
+			// {
+			// 	// 最初はbabelの配置になる。順番変更不可
+			// 	test: /\.(js|jsx)$/i,
+			// 	loader: 'babel-loader',
+			// 	options: {presets: ['@babel/preset-env', '@babel/preset-react', '@babel/preset-typescript']},
+			// },
 			{
 				test: /\.(ts|tsx)$/i,
 				loader: 'ts-loader',
@@ -62,6 +62,7 @@ const config = {
 	resolve: {
 		extensions: ['.jsx'],
 	},
+	target: ['web', 'es6'],
 	externals: [nodeExternals()],
 }
 

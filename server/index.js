@@ -13,7 +13,7 @@ app.get('/', (req, res) => {
     <head>
       <title>CountUp</title>
       <meta charset="utf-8"/>
-      <script src="./client.js" async defer></script>
+      <script src="./client.js" defer></script>
     </head>
     <body>
       <div id="root">
