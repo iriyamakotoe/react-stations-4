@@ -13,10 +13,10 @@ const isProduction = process.env.NODE_ENV == 'production'
 const stylesHandler = 'style-loader'
 
 const config = {
-	entry: './server/index.js',
+	entry: './src/index.jsx',
 	output: {
 		path: path.resolve(__dirname, 'dist'),
-		filename: 'server.js',
+		filename: 'client.js',
 	},
 	devServer: {
 		static: {
@@ -60,9 +60,8 @@ const config = {
 		],
 	},
 	resolve: {
-		extensions: ['.tsx', '.ts', '.jsx', '.js', '...'],
+		extensions: ['.jsx'],
 	},
-	target: ['node'],
 	externals: [nodeExternals()],
 }
 
