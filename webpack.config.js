@@ -1,7 +1,6 @@
 const path = require('path')
 
 module.exports = {
-	mode: 'development',
 	entry: path.resolve(__dirname, 'server/index.js'),
 	output: {
 		path: path.resolve(__dirname, 'dist'),
@@ -17,8 +16,8 @@ module.exports = {
 			},
 		],
 	},
-	resolve: {
-		extensions: ['.ts', '.tsx', '.js', '.jsx'],
-	},
+	// resolve: {
+	// 	extensions: ['.ts', '.tsx', '.js', '.jsx'],
+	// },
 	target: ['node', 'es6'],
 }
