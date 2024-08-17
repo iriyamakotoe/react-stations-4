@@ -7,17 +7,16 @@ const app = express()
 const port = 9000
 
 app.get('/', (req, res) => {
-	const app = ReactDOMServer.renderToString(<App />)
+	const text = 'Hello, World!'
 	const html = `
   <html>
     <head>
       <title>CountUp</title>
       <meta charset="utf-8"/>
-      <script src="./client.js" defer></script>
     </head>
     <body>
       <div id="root">
-	  ${app}
+	  ${text}
       </div>
     </body>
   </html>
