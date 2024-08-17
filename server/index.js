@@ -1,13 +1,13 @@
 import express from 'express'
 import React from 'react'
 import ReactDOMServer from 'react-dom/server'
-import CountUp from '../src/CountUp.jsx'
+import App from '../src/CountUp'
 
 const app = express()
 const port = 9000
 
 app.get('/', (req, res) => {
-	const app = ReactDOMServer.renderToString(<CountUp />)
+	const app = ReactDOMServer.renderToString(<App />)
 	const html = `
   <html>
     <head>

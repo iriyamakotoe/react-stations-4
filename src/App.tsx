@@ -10,7 +10,7 @@ function App() {
 	return (
 		<>
 			<StrictMode>
-				<BrowserRouter basename={import.meta.env.DEV ? '/' : 'react-stations-4'}>
+				<BrowserRouter basename={process.env.DEV ? '/' : 'react-stations-4'}>
 					<Routes>
 						<Route path={`/`} element={<Home />} />
 						<Route path={`/list`} element={<List />} />
