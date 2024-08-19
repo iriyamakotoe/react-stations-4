@@ -2,9 +2,10 @@
 	"name": "my-webpack-project",
 	"private": true,
 	"version": "1.0.0",
+	"type": "module",
 	"scripts": {
 		"dev": "vite",
-		"lint": "eslint .",
+		"lint": "eslint --fix 'src/**/*.tsx'",
 		"preview": "vite preview",
 		"rebuild": "vite build && rm -R docs && cp -r dist docs",
 		"build": "webpack --mode=production --node-env=production",

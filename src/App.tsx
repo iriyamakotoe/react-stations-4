@@ -1,24 +1,19 @@
-import React from 'react'
-import {StrictMode} from 'react'
-import {BrowserRouter, Route, Routes} from 'react-router-dom'
-import {Home} from './pages/Home'
-import {List} from './pages/List'
-import './App.scss'
+import React from 'react';
+import { useState,useEffect } from 'react';
+import DogMainImage from './components/DogMainImage';
+import DogList from './components/DogList';
+import './App.scss';
 
-function App() {
-	return (
-		<>
-			<StrictMode>
-				<BrowserRouter basename={import.meta.env.DEV ? 'react-stations-4' : '/'}>
-					<Routes>
-						<Route path={`/`} element={<Home />} />
-						<Route path={`/list`} element={<List />} />
-					</Routes>
-				</BrowserRouter>
-			</StrictMode>
-			,
-		</>
-	)
+/**
+ * @type {() => JSX.Element}
+ */
+export const App = () => {
+  const [selectBreed, setSelectBreed] = useState('affenpinscher')
+  return (
+    <>
+    <DogMainImage selectBreed={selectBreed} setSelectBreed={setSelectBreed} />
+    <DogList selectBreed={selectBreed} setSelectBreed={setSelectBreed} />
+    </>
+  )
 }
-
 export default App
