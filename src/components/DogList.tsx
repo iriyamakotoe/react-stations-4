@@ -7,7 +7,7 @@ import 'swiper/css/navigation';
 
 type Props = {
   selectBreed: string,
-  setSelectBreed: () => void
+  setSelectBreed: (value: string) => void
 };
 export const DogList: React.FC<Props> = (props) => {
   const [dogs, setDogs] = useState([])

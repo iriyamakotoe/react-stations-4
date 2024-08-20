@@ -25,7 +25,7 @@ export const App: React.FC = () => {
     <>
     <header className='flex justify-between items-center m-3'>
       <h1 className='text-3xl inline-block text-white p-1 pl-5 pr-5'>{selectBreed}</h1>
-      <SelectBreed breeds={breeds} setBreeds={setBreeds} selectBreed={selectBreed} setSelectBreed={setSelectBreed} />
+      <SelectBreed breeds={breeds} selectBreed={selectBreed} setSelectBreed={setSelectBreed} />
     </header>
     
     <DogList selectBreed={selectBreed} setSelectBreed={setSelectBreed} />    
