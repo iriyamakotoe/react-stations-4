@@ -9,7 +9,8 @@
 		"preview": "vite preview",
 		"build": "tsc -b && vite build && cp -r dist docs",
 		"rebuild": "vite build && rm -R docs && cp -r dist docs",
-		"start": "nodemon ./server/index.js"
+		"start": "nodemon ./server/index.js",
+		"build:webpack": "webpack --mode=production --node-env=production"
 	},
 	"dependencies": {
 		"express": "^4.19.2",
