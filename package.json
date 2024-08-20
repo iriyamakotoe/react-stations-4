@@ -2,7 +2,6 @@
 	"name": "my-webpack-project",
 	"private": true,
 	"version": "1.0.0",
-	"type": "module",
 	"scripts": {
 		"dev": "vite",
 		"lint": "eslint --fix 'src/**/*.tsx'",
@@ -10,7 +9,8 @@
 		"build": "tsc -b && vite build && cp -r dist docs",
 		"rebuild": "vite build && rm -R docs && cp -r dist docs",
 		"start": "nodemon ./server/index.js",
-		"build:webpack": "webpack --mode=production --node-env=production"
+		"build:webpack": "webpack --mode=production --node-env=production",
+		"start:webpack": "nodemon ./dist/server.js"
 	},
 	"dependencies": {
 		"express": "^4.19.2",
