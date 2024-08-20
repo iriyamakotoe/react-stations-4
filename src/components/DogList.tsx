@@ -1,50 +1,46 @@
 import React from 'react';
 import { useState,useEffect } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
 
 type Props = {
   selectBreed: string,
-  setSelectBreed: func
+  setSelectBreed: () => void
 };
 export const DogList: React.FC<Props> = (props) => {
-  const [breeds, setBreeds] = useState([])
-  // const [selectBreed, setSelectBreed] = useState('affenpinscher')
   const [dogs, setDogs] = useState([])
 
   useEffect(() => {
-    fetch('https://dog.ceo/api/breeds/list/all')
-    .then(res => res.json())
-    .then(json => {
-      setBreeds(json.message)
-    });
-  },[])
+    fetchDogImage()
+  },[props.selectBreed])
 
-  const listItems = Object.keys(breeds).map((key) =>
-    <option value={key} key={key}>{key}</option>
-  );
-
-  const handleSelectChange = (e) => {
-    props.setSelectBreed(e.target.value)
+  const fetchDogImage = async () => {
+    if(props.selectBreed) {
+      await fetch('https://dog.ceo/api/breed/' + props.selectBreed + '/images/random/10')
+      .then(res => res.json())
+      .then(json => {
+        setDogs(json.message)
+      })
+      .catch(err =>
+        console.log(err)
+      )
+    }
   }
-
-  const handleClick = async () => {
-    const result = await fetch('https://dog.ceo/api/breed/' + props.selectBreed + '/images/random/10');
-    result.json().then(json => setDogs(json.message));
-  }
-
-  const imgList = dogs.map((value) =>
-    <li key={value}><img src={value} alt="" /></li>
-  );
 
   return <>
-    <p>select dog!</p>
-    <select name="breeds" id="breeds" onChange={handleSelectChange}>
-    {listItems}
-    </select>
-    <button onClick={handleClick}>表示</button>
-    
-    <ul id="dogs">
-      {imgList.length>0?imgList:''}
-    </ul>
+      <Swiper
+        navigation={true} 
+        modules={[Navigation]}
+        slidesPerView={dogs.length<3?dogs.length:3}
+      >
+        {dogs.map((value) => (
+          <SwiperSlide key={value}>
+            <img src={value} alt="" />
+          </SwiperSlide>
+        ))}
+      </Swiper>
   </>
 }
 
