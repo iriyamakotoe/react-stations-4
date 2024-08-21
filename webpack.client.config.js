@@ -3,10 +3,10 @@ const stylesHandler = 'style-loader'
 
 module.exports = {
   mode: 'development',
-  entry: path.resolve(__dirname, 'server/index.js'),
+  entry: path.resolve(__dirname, 'src/main.tsx'),
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'server.js',
+    filename: 'client.js',
   },
   module: {
     rules: [
@@ -34,5 +34,5 @@ module.exports = {
   resolve: {
     extensions: ['.ts', '.tsx','.js', '.jsx'],
   },
-  target: ['node', 'es6'],
+  target: ['web', 'es6'],
 };

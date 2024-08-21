@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from "react"
 import { useState,useEffect } from 'react';
 import DogList from './components/DogList';
 import SelectBreed from './components/SelectBreed';

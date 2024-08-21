@@ -9,7 +9,7 @@
 		"build": "tsc -b && vite build && cp -r dist docs",
 		"rebuild": "vite build && rm -R docs && cp -r dist docs",
 		"start": "nodemon ./server/index.js",
-		"build:webpack": "webpack --mode=production --node-env=production",
+		"build:webpack": "webpack --config webpack.config.js&&webpack --config webpack.client.config.js",
 		"start:webpack": "nodemon ./dist/server.js"
 	},
 	"dependencies": {

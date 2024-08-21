@@ -1,5 +1,9 @@
 {
 	"files": [],
+	"compilerOptions": {
+		"allowSyntheticDefaultImports": true,
+		"jsx": "react",
+	},
 	"references": [
 	  { "path": "./tsconfig.app.json" },
 	  { "path": "./tsconfig.node.json" }
